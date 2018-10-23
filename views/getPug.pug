@@ -1,0 +1,17 @@
+html
+    head
+        title KenzieGram Pug
+        link(rel="stylesheet" type="text/css" media="screen" href="style.css")
+        script(src="/index.js")
+    body
+        h1(class="title") Welcome to Kenziegram!
+        form(method="POST" enctype="multipart/form-data" action="http://localhost:3000/uploads")
+            fieldset
+                div(class="formDiv")
+                    label(for="file") Choose a File
+                    input(type="file" id="file" name="myFile")
+                    button(type="submit" class="button") Upload
+                
+            div(id="displayDiv")
+                each photo in items
+                    img(src=`/uploads/${photo}` style="width: 40%; margin: 20px")

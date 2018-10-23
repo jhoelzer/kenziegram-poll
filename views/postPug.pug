@@ -1,0 +1,12 @@
+html
+    head
+        title KenzieGram Pug
+        link(rel="stylesheet" type="text/css" media="screen" href="style.css")
+        script(src="/app.js")
+    body
+        div(class="formDiv" id="postFormDiv")
+            h1(class="title") Upload Successful
+            a(href="/" id="link")
+                button(class="button") Back
+        div(id="uploadDisplay")
+            img(src=`${newImage}`)
