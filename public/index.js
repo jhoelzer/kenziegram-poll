@@ -1,5 +1,7 @@
 let now = Date.now();
 let interval = 5000;
+// let timer;
+errorCount = 0;
 
 function fetchImg() {
     const postOpt = {
@@ -21,6 +23,13 @@ function fetchImg() {
                 defaultStatus.appendChild(img);
             }
         })
+        .catch(err => {
+        errorCount++;
+        if (errCount >= 2) {
+            console.log("Server Connection Lost")
+            // clearTimeout(timer)
+        }
+    })
 }
 
 setInterval(fetchImg, interval);
